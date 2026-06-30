@@ -33,7 +33,7 @@ def main():
     combined_df.columns = combined_df.columns.str.strip()
     
     # FIX: Added 'Dst Port' and 'Protocol' to prevent the model from memorizing port rules
-    metadata_cols = ['Flow ID', 'Src IP', 'Dst IP', 'Src Port', 'Dst Port', 'Protocol', 'Timestamp','Init Fwd Win Bytes', 'Init Bwd Win Bytes']
+    metadata_cols = ['Flow ID', 'Src IP', 'Dst IP', 'Src Port', 'Dst Port', 'Protocol', 'Timestamp','Init Fwd Win Bytes', 'Init Bwd Win Bytes',"Fwd Seg Size Min","Fwd Header Length","Bwd Header Length"]
     cols_to_drop = [col for col in metadata_cols if col in combined_df.columns]
     combined_df = combined_df.drop(columns=cols_to_drop)
 
